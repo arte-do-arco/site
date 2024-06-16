@@ -7,13 +7,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #93C572;
             color: #333;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #333;
+            background-color: #8A9A5B;
             color: #fff;
             padding: 20px 0;
             text-align: center;
@@ -38,6 +38,10 @@
         .content {
             max-width: 800px;
             margin: auto;
+            display: none;
+        }
+        .content.active {
+            display: block;
         }
         .music-samples {
             margin: 20px 0;
@@ -90,29 +94,43 @@
 </header>
 
 <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#musica">Música</a>
-    <a href="#composição">Composição</a>
-    <a href="#contato">Contato</a>
+    <a href="#" data-section="sobre">Sobre</a>
+    <a href="#" data-section="aulas">Aulas</a>
+    <a href="#" data-section="composição">Composição</a>
+    <a href="#" data-section="contato">Contato</a>
 </nav>
 
 <div class="container">
-    <section id="sobre" class="content">
+    <section id="sobre" class="content active">
         <h2>Sobre</h2>
         <p>Bem-vindo ao meu site pessoal! Eu sou [Seu Nome], professor de violino e viola de orquestra. Tenho [X] anos de experiência em ensinar música e tocar em orquestras renomadas. Estou aqui para compartilhar meu conhecimento e paixão pela música com você.</p>
     </section>
 
-    <section id="musica" class="content">
-        <h2>Exemplos de Música</h2>
+    <section id="aulas" class="content">
+        <h2>Aulas</h2>
+        <p>Aulas de violino</p>
+        <p>Aulas de viola</p>
+        <p>Aulas de teoria musical</p>
+        <p>Aulas de leitura de partitura</p>
+        <p>Aulas de contraponto</p>
+    </section>
+
+    <section id="composição" class="content">
+        <h2>Exemplos de Composição</h2>
         <div class="music-samples">
-            <h3>Exemplo 1: canone_mixolidio</h3>
+            <h3>Cânone 1: Cânone Mixolídio</h3>
             <audio controls>
                 <source src="canone_mixolidio.mp3" type="audio/mpeg">
                 Seu navegador não suporta o elemento de áudio.
             </audio>
-            <h3>Exemplo 2: Sonata para Viola em Fá Menor</h3>
+            <h3>Contraponto Espelhado 1: Espelho1</h3>
             <audio controls>
-                <source src="exemplo2.mp3" type="audio/mpeg">
+                <source src="espelho1.mp3" type="audio/mpeg">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
+            <h3>Contraponto Espelhado 2: Espelho2_Tremolo</h3>
+            <audio controls>
+                <source src="espelho2_tremolo.mp3" type="audio/mpeg">
                 Seu navegador não suporta o elemento de áudio.
             </audio>
         </div>
@@ -135,6 +153,28 @@
 <footer>
     <p>&copy; 2024 Marcus Vinicius. Todos os direitos reservados.</p>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const links = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('.content');
+
+        links.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetSection = this.getAttribute('data-section');
+                
+                sections.forEach(section => {
+                    if (section.id === targetSection) {
+                        section.classList.add('active');
+                    } else {
+                        section.classList.remove('active');
+                    }
+                });
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
