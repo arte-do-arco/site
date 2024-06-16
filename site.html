@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aulas de Violino e Viola de Orquestra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            color: #fff;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .container {
+            padding: 20px;
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+        }
+        .music-samples {
+            margin: 20px 0;
+        }
+        .music-samples audio {
+            width: 100%;
+            margin: 10px 0;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Aulas de Violino e Viola de Orquestra</h1>
+</header>
+
+<nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#musica">Música</a>
+    <a href="#contato">Contato</a>
+</nav>
+
+<div class="container">
+    <section id="sobre" class="content">
+        <h2>Sobre</h2>
+        <p>Bem-vindo ao meu site pessoal! Eu sou [Seu Nome], professor de violino e viola de orquestra. Tenho [X] anos de experiência em ensinar música e tocar em orquestras renomadas. Estou aqui para compartilhar meu conhecimento e paixão pela música com você.</p>
+    </section>
+
+    <section id="musica" class="content">
+        <h2>Exemplos de Música</h2>
+        <div class="music-samples">
+            <h3>Exemplo 1: Concerto para Violino em Dó Maior</h3>
+            <audio controls>
+                <source src="exemplo1.mp3" type="audio/mpeg">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
+            <h3>Exemplo 2: Sonata para Viola em Fá Menor</h3>
+            <audio controls>
+                <source src="exemplo2.mp3" type="audio/mpeg">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
+        </div>
+    </section>
+
+    <section id="contato" class="content">
+        <h2>Contato</h2>
+        <form action="mailto:seuemail@exemplo.com" method="post" enctype="text/plain">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 [Seu Nome]. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
