@@ -11,25 +11,27 @@
             color: #333;
             margin: 0;
             padding: 0;
+            font-size: 18px;
         }
         header {
-            font-family: Bradley Hand ITC, sans-serif;
+            font-family: 'Bradley Hand ITC', cursive;
             background-color: #8A9A5B;
             color: #fff;
             padding: 10px 0;
             text-align: center;
-            font-size: 28px;
         }
         nav {
             display: flex;
             justify-content: center;
             background-color: #444;
+            flex-wrap: wrap; /* Permite que os links se ajustem em várias linhas */
         }
         nav a {
             color: #fff;
             padding: 14px 20px;
             text-decoration: none;
             text-align: center;
+            flex: 1 1 auto; /* Links se ajustam para preencher o espaço disponível */
         }
         nav a:hover {
             background-color: #555;
@@ -56,8 +58,7 @@
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 0.1 px 0;
-            position: fixed;
+            padding: 10px 0;
             width: 100%;
             bottom: 0;
         }
@@ -73,6 +74,7 @@
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box; /* Garantir que padding e border sejam incluídos na largura total */
         }
         form button {
             background-color: #333;
@@ -88,13 +90,27 @@
 
         /* Estilos específicos para a seção "home" */
         .home-especifico {
-            font-family: Bradley Hand ITC, sans-serif;
+            font-family: 'Bradley Hand ITC', cursive;
             text-align: center;
             font-size: 20px;
-            
+        }
+
+        @media (max-width: 600px) {
+            header {
+                font-size: 24px; /* Ajuste do tamanho da fonte em telas menores */
+            }
+            nav a {
+                padding: 10px;
+                font-size: 16px; /* Tamanho da fonte menor para telas pequenas */
+            }
+            form input, form textarea {
+                font-size: 16px;
+            }
+            footer {
+                font-size: 14px;
+            }
         }
     </style>
-
 </head>
 <body>
 
@@ -113,11 +129,13 @@
 
 <div class="container">
     <section id="home" class="content active home-especifico">
-        <h2>A música está ao alcance de todos!<p>Permita a si mesmo a maravilhosa experiência de se exprimir com arte, para isso basta apenas vivenciá-la! <p>Qualquer que seja o estilo a verdadeira expressão reflete nossos sonhos!<h2>
+        <h2>A música está ao alcance de todos!</h2>
+        <h2>Permita a si mesmo a maravilhosa experiência de se exprimir com arte, para isso basta apenas vivenciá-la!<h2>
+        <h2>Qualquer que seja o estilo, a verdadeira expressão reflete nossos sonhos!<h2>
     </section>
 
     <section id="aulas" class="content">
-        <h2>aulas</h2>
+        <h2>Aulas</h2>
         <p>Aulas de violino</p>
         <p>Aulas de viola</p>
         <p>Aulas de teoria musical</p>
@@ -152,22 +170,18 @@
     </section>
 
     <section id="contato" class="content">
-        <h2>contato</h2>
-        <form action="https://formspree.io/f/xdoqqbjo"/marcusvse@yahoo.com.br
-  method="POST"
->
-        <label>
-        seu e-mail:
-        <input type="email" name="email" required>
-        </label>
-        <label>
-        sua mensagem:
-        <textarea name="message"></textarea>
-        </label>
-        <input type="text" name="_replyto" style="display:none">
-        <!-- your other form fields go here -->
-        <button type="submit">Send</button>
-
+        <h2>Contato</h2>
+        <form action="https://formspree.io/f/xdoqqbjo" method="POST">
+            <label>
+                Seu e-mail:
+                <input type="email" name="email" required>
+            </label>
+            <label>
+                Sua mensagem:
+                <textarea name="message"></textarea>
+            </label>
+            <input type="text" name="_replyto" style="display:none">
+            <button type="submit">Send</button>
         </form>
     </section>
 </div>
@@ -177,7 +191,9 @@
 
     <!-- hitwebcounter Code START -->
     <a href="https://www.hitwebcounter.com" target="_blank">
-    <img src="https://hitwebcounter.com/counter/counter.php?page=14158863&style=0007&nbdigits=5&type=page&initCount=0" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>       
+        <img src="https://hitwebcounter.com/counter/counter.php?page=14158863&style=0007&nbdigits=5&type=page&initCount=0" title="Counter Widget" alt="Visit counter For Websites" border="0" />
+    </a>       
+    <!-- hitwebcounter Code END -->
 </footer>
 
 <script>
