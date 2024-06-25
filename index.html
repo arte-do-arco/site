@@ -97,8 +97,45 @@
         .justificado {
             text-align: justify;
             font-size: 18px;
+            line-height: 1.6; /* Valor recomendado, ajuste conforme necessário */
+        }
+        .home-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+        .home-column {
+            flex: 0 1 48%;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: transparent; /* Fundo transparente */
+            color: #fff; /* Texto branco */
+        }
+        .home-column h2 {
+            font-family: 'Bradley Hand ITC', cursive;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .home-column p {
+            text-align: justify;
+            font-size: 18px;
+        }
+        .home-left {
+            font-family: 'Bradley Hand ITC', cursive;
+            text-align: center;
+            color: #fff;
         }
         @media (max-width: 600px) {
+            .home-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .home-column {
+                flex: 0 1 100%;
+                margin-bottom: 20px;
+            }
             header {
                 font-size: 24px;
                 padding: 20px 0;
@@ -119,7 +156,7 @@
 <body>
 
 <header>
-    <h1>Formação Musical</h1>
+    <h1>Formação Musical - SITE EM CONSTRUÇÃO</h1>
     <h2>Aulas de Violino e Viola de Orquestra</h2>
     <h3>Teoria Musical - Composição - Contraponto</h3>
     <h2>AULAS PRESENCIAIS EM BELO HORIZONTE E ONLINE</h2>
@@ -134,10 +171,21 @@
 </nav>
 
 <div class="container">
-    <section id="home" class="content active home-especifico">
-        <h2>A música está ao alcance de todos!</h2>
-        <h2>Permita-se a maravilhosa experiência de se exprimir com arte, para isso basta apenas vivenciá-la!</h2>
-        <h2>Qualquer que seja seu estilo, a verdadeira expressão reflete nossos sonhos!</h2>
+    <section id="home" class="content active">
+        <div class="home-container">
+            <div class="home-column home-left">
+                <h1>A música está ao alcance de todos!</h1>
+                <h1>Permita-se a maravilhosa experiência de se exprimir com arte, para isso basta apenas vivenciá-la!</h1>
+                <h1>Qualquer que seja seu estilo, a verdadeira expressão reflete nossos sonhos!</h1>
+            </div>
+            <div class="home-column">
+                <h2>professor mestre e doutor em música</h2>
+                <h2>aulas individuais personalizadas</h2>
+                <h2>aulas em grupo</h2>
+                <h2>repertório variado</h2>
+                <h2>aulas presenciais ou online</h2>
+            </div>
+        </div>
     </section>
 
     <section id="aulas" class="content">
@@ -154,82 +202,74 @@
     </section>
 
     <section id="composição" class="content">
-        <h2>Exemplos de Composição</h2>
+        <h2>Exemplos de contraponto</h2>
         <div class="music-samples">
-            <h3>Cânone 1: Cânone Mixolídio</h3>
-            <audio controls>
-                <source src="canone_mixolidio.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-            <h3>Contraponto Espelhado 1: Espelho1</h3>
-            <audio controls>
-                <source src="espelho1.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-            <h3>Contraponto Espelhado 2: Espelho2_Tremolo</h3>
-            <audio controls>
-                <source src="espelho2_tremulo.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-            <h3>Contraponto Livre a 3 vozes: Celta</h3>
-            <audio controls>
-                <source src="celta.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-        </div>
-    </section>
+        <h3>Cânone</h3>
+        <p class="justificado">composição polifônica na qual uma melodia é acompanhada por uma ou mais entradas posteriores dela mesma</p>
+        <h4>Cânone Mixolídio (a duas vozes)</h4>
+        <audio controls>
+            <source src="canone_mixolidio.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <h3>Contraponto Espelhado</h3>
+        <p class="justificado">composição polifônica a duas vozes, composta de tal forma que a mesma parte, de cabeça para baixo, realiza o contraponto da melodia original</p>
+        <h4>Espelho1</h4>
+        <audio controls>
+            <source src="espelho1.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <h4>Espelho2 (tremolo)</h4>
+        <audio controls>
+            <source src="espelho2_tremulo.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <h3>Contraponto Livre</h3>
+        <p class="justificado">composição polifônica que utiliza todas as espécies de contraponto</p>
+        <h4>Céltica (a três vozes)</h4>
+        <audio controls>
+            <source src="celta.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </div>
+</section>
 
-    <section id="sobre" class="content">
-        <h2>Dados Biográficos</h2>
-        <p class="justificado">em construção.</p>
-    </section>
+<section id="sobre" class="content">
+    <h2>Sobre</h2>
+    <p class="justificado">Site dedicado a promover a arte musical através de aulas de violino e viola de orquestra, teoria musical, composição e contraponto. Nosso objetivo é oferecer uma experiência enriquecedora para todos os amantes da música, seja através de aulas presenciais em Belo Horizonte ou online para alunos de todo o mundo.</p>
+    <p class="justificado">Entre em contato conosco para mais informações sobre nossos cursos e horários disponíveis. Estamos comprometidos em proporcionar o melhor ambiente de aprendizagem para você desenvolver suas habilidades musicais ao máximo.</p>
+</section>
 
-    <section id="contato" class="content">
-        <h2>Contato</h2>
-        <form action="https://formspree.io/f/xdoqqbjo" method="POST">
-            <label>
-                Nome:
-                <input type="text" name="nome" required>
-            </label>
-            <label>
-                Seu e-mail:
-                <input type="email" name="email" required>
-            </label>
-            <label>
-                Sua mensagem:
-                <textarea name="message" required></textarea>
-            </label>
-            <input type="text" name="_replyto" style="display:none">
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+<section id="contato" class="content">
+    <h2>Contato</h2>
+    <form action="#">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
 </div>
 
 <footer>
-    <p>&copy; 2024 Marcus Vinicius. Todos os direitos reservados.</p>
-
-    <!-- hitwebcounter Code START -->
-    <a href="https://www.hitwebcounter.com" target="_blank">
-        <img src="https://hitwebcounter.com/counter/counter.php?page=14158863&style=0007&nbdigits=5&type=page&initCount=0" title="Counter Widget" alt="Visit counter For Websites" border="0" />
-    </a>       
-    <!-- hitwebcounter Code END -->
+    <p>&copy; 2024 arte do arco violino - todos os direitos reservados</p>
 </footer>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const links = document.querySelectorAll('nav a');
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('nav a');
         const sections = document.querySelectorAll('.content');
 
-        links.forEach(link => {
-            link.addEventListener('click', function (e) {
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
                 e.preventDefault();
-                const targetSection = this.getAttribute('data-section');
-                
+                const sectionId = this.getAttribute('data-section');
                 sections.forEach(section => {
-                    if (section.id === targetSection) {
+                    section.classList.remove('active');
+                    if (section.id === sectionId) {
                         section.classList.add('active');
-                    } else {
-                        section.classList.remove('active');
                     }
                 });
             });
@@ -239,3 +279,8 @@
 
 </body>
 </html>
+
+
+
+
+
