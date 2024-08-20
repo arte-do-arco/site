@@ -9,9 +9,9 @@
         body {
             font-family: Arial, sans-serif;
             background: url('https://raw.githubusercontent.com/MarcusVinicius-doc/site/main/fundo_amati.JPG') no-repeat center center;
-            background-repeat: repeat; /* Repetir a imagem de fundo */
-            background-attachment: scroll; /* A imagem rola com o conteúdo */
-            background-size: contain; /* A imagem aparecerá inteira antes de se repetir */
+            background-repeat: repeat;
+            background-attachment: scroll;
+            background-size: cover;
             color: #333;
             margin: 0;
             padding: 0;
@@ -100,20 +100,19 @@
         .justificado {
             text-align: justify;
             font-size: 18px;
-            line-height: 1.6; /* Valor recomendado, ajuste conforme necessário */
+            line-height: 1.6;
         }
         .home-container {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
         .home-column {
             flex: 0 1 48%;
             padding: 10px;
             box-sizing: border-box;
-            background-color: transparent; /* Fundo transparente */
-            color: #333; /* Texto branco */
         }
         .home-column h2 {
             font-family: 'Bradley Hand ITC', cursive;
@@ -123,7 +122,7 @@
         }
         .home-column p {
             text-align: justify;
-            font-size: 28px;
+            font-size: 18px;
         }
         .home-left {
             font-family: 'Bradley Hand ITC', cursive;
@@ -140,8 +139,11 @@
                 margin-bottom: 20px;
             }
             header {
-                font-size: 24px;
-                padding: 20px 0;
+                font-size: 20px;
+                padding: 10px 0;
+            }
+            nav {
+                flex-direction: column;
             }
             nav a {
                 padding: 10px;
@@ -155,7 +157,6 @@
             }
         }
     </style>
-</head>
 <body>
 
 <header>
