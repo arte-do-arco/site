@@ -58,9 +58,11 @@
             padding: 20px;
         }
         .content {
-            max-width: 800px;
-            margin: auto;
-            display: none;
+         position: relative;
+         z-index: 1; /* Colocar as seções acima do vídeo */
+         max-width: 1000px; /* Limitar a largura do conteúdo */
+         margin: auto; /* Centralizar horizontalmente */
+          padding: 20px; /* Espaçamento interno */
         }
         .content.active {
             display: block;
