@@ -27,7 +27,7 @@
             height: 100vh;
             z-index: -1;
             object-fit: cover;
-            opacity: 0.8; /* Transparência para não sobrepor o conteúdo */
+            opacity: 0.4; /* Transparência para não sobrepor o conteúdo */
         }
 
         header {
