@@ -17,6 +17,19 @@
             padding: 0;
             font-size: 18px;
         }
+
+        /* Estilos para o vídeo */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 22vw; /* Ajuste conforme necessário */
+            height: 100vh;
+            z-index: -1;
+            object-fit: cover;
+            opacity: 0.5; /* Transparência para não sobrepor o conteúdo */
+        }
+
         header {
             font-family: 'Bradley Hand ITC', cursive;
             background: url('https://raw.githubusercontent.com/MarcusVinicius-doc/site/main/site.JPG') no-repeat center center;
@@ -101,9 +114,9 @@
             text-align: justify;
             font-size: 18px;
             line-height: 1.6; /* Valor recomendado, ajuste conforme necessário */
-	}
+        }
         .justificado2 {
-	    font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif;
             text-align: center;
             font-size: 22px;
             line-height: 1.6; /* Valor recomendado, ajuste conforme necessário */
@@ -163,6 +176,9 @@
     </style>
 </head>
 <body>
+
+<!-- Adiciona o vídeo com loop e áudio -->
+<video class="video-background" src="video1Rodolfo.mp4" autoplay loop></video>
 
 <header>
     <h1>Formação Musical</h1>
@@ -268,6 +284,11 @@
         <h4>Céltica (a três vozes)</h4>
         <audio controls>
             <source src="celta.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+       <h4>rodolfo1</h4>
+        <video controls>
+            <source src="video1Rodolfo.mp4" type="video/MP4">
             Seu navegador não suporta o elemento de áudio.
         </audio>
     </div>
