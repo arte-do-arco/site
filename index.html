@@ -17,19 +17,6 @@
             padding: 0;
             font-size: 18px;
         }
-
-        /* Estilos para o vídeo */
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 20vw; /* Ajuste conforme necessário */
-            height: 100vh;
-            z-index: -1;
-            object-fit: cover;
-            opacity: 0.6; /* Transparência para não sobrepor o conteúdo */
-        }
-
         header {
             font-family: 'Bradley Hand ITC', cursive;
             background: url('https://raw.githubusercontent.com/MarcusVinicius-doc/site/main/site.JPG') no-repeat center center;
@@ -58,11 +45,9 @@
             padding: 20px;
         }
         .content {
-         position: relative;
-         z-index: 1; /* Colocar as seções acima do vídeo */
-         max-width: 1000px; /* Limitar a largura do conteúdo */
-         margin: auto; /* Centralizar horizontalmente */
-          padding: 20px; /* Espaçamento interno */
+            max-width: 800px;
+            margin: auto;
+            display: none;
         }
         .content.active {
             display: block;
@@ -116,9 +101,9 @@
             text-align: justify;
             font-size: 18px;
             line-height: 1.6; /* Valor recomendado, ajuste conforme necessário */
-        }
+	}
         .justificado2 {
-            font-family: Arial, sans-serif;
+	    font-family: Arial, sans-serif;
             text-align: center;
             font-size: 22px;
             line-height: 1.6; /* Valor recomendado, ajuste conforme necessário */
@@ -177,49 +162,6 @@
         }
     </style>
 </head>
-
-<body>
-
-    <!-- O resto do seu conteúdo HTML vai aqui -->
-
-    <!-- Código do vídeo em loop com som -->
-    <video id="video-background" autoplay muted loop class="video-background">
-    <source src="video1Rodolfo.mp4" type="video/mp4">
-    Seu navegador não suporta o elemento de vídeo.
-</video>
-
-<!-- Botão para iniciar/desativar o som -->
-<button id="muteButton" style="position: absolute; bottom: 20px; left: 20px; padding: 10px; z-index: 100; background-color: rgba(255, 255, 255, 0.7); border: none;">Iniciar Som</button>
-
-<script>
-    const video = document.getElementById('video-background');
-    const muteButton = document.getElementById('muteButton');
-
-    // Função para alternar o som
-    muteButton.addEventListener('click', function(event) {
-        event.stopPropagation(); // Impede que o clique no botão ative/desative o som pela janela
-        if (video.muted) {
-            video.muted = false;  // Ativa o som
-            muteButton.textContent = 'Desativar Som';  // Muda o texto do botão
-        } else {
-            video.muted = true;  // Desativa o som
-            muteButton.textContent = 'Iniciar Som';  // Muda o texto do botão
-        }
-    });
-
-    // Ativa o som ao clicar em qualquer lugar da página
-    window.addEventListener('click', function() {
-        if (video.muted) {
-            video.muted = false;  // Ativa o som ao clicar em qualquer lugar da tela
-            muteButton.textContent = 'Desativar Som';  // Muda o texto do botão
-        }
-    });
-</script>
-
-
-
-
-
 <body>
 
 <header>
@@ -328,10 +270,9 @@
         <audio controls>
             <source src="celta.mp3" type="audio/mpeg">
             Seu navegador não suporta o elemento de áudio.
-        </audio>
-        </div>
+        </audio>       
+    </div>
 </section>
-
 
  <section id="galeria" class="content">
         <h2>vídeos de alunos (em construção)</h2>        
@@ -344,7 +285,6 @@
         </audio>
         </div>
 </section>
-
 
 <section id="sobre" class="content">
     <h2>sobre</h2>
