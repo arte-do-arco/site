@@ -175,6 +175,38 @@
         }
     </style>
 </head>
+
+<body>
+
+    <!-- O resto do seu conteúdo HTML vai aqui -->
+
+    <!-- Código do vídeo em loop com som -->
+    <video id="video-background" autoplay muted loop style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -1;">
+        <source src="URL_DO_VIDEO" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
+
+    <!-- Botão para iniciar o som -->
+    <button id="startButton" style="position: fixed; bottom: 20px; right: 20px; padding: 10px; z-index: 100;">Iniciar Som</button>
+
+    <!-- Script para ativar o som com interação -->
+    <script>
+        const video = document.getElementById('video-background');
+        const startButton = document.getElementById('startButton');
+
+        startButton.addEventListener('click', function() {
+            video.muted = false;  // Ativa o som do vídeo
+            video.play();  // Reproduz o vídeo caso tenha pausado
+            startButton.style.display = 'none';  // Esconde o botão após o clique
+        });
+
+        // Assegura que o vídeo seja reproduzido com som após o clique
+        window.addEventListener('click', function() {
+            video.muted = false;
+        });
+    </script>
+
+
 <body>
 
 <!-- Adiciona o vídeo com loop e áudio -->
