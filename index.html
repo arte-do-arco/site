@@ -23,11 +23,11 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 22vw; /* Ajuste conforme necessário */
+            width: 20vw; /* Ajuste conforme necessário */
             height: 100vh;
             z-index: -1;
             object-fit: cover;
-            opacity: 0.7; /* Transparência para não sobrepor o conteúdo */
+            opacity: 0.9; /* Transparência para não sobrepor o conteúdo */
         }
 
         header {
@@ -181,36 +181,44 @@
     <!-- O resto do seu conteúdo HTML vai aqui -->
 
     <!-- Código do vídeo em loop com som -->
-    <video id="video-background" autoplay muted loop style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -1;">
-        <source src="URL_DO_VIDEO" type="video/mp4">
-        Seu navegador não suporta o elemento de vídeo.
-    </video>
+    <video id="video-background" autoplay muted loop style="position: fixed; left: 0; top: 0; width: 20vw; height: 100vh; z-index: -1; object-fit: cover; opacity: 0.9; background: transparent;">
+    <source src="video1Rodolfo.mp4" type="video/mp4">
+    Seu navegador não suporta o elemento de vídeo.
+</video>
 
-    <!-- Botão para iniciar o som -->
-    <button id="startButton" style="position: fixed; bottom: 20px; right: 20px; padding: 10px; z-index: 100;">Iniciar Som</button>
+<!-- Botão para iniciar/desativar o som -->
+<button id="muteButton" style="position: absolute; bottom: 20px; left: 20px; padding: 10px; z-index: 100; background-color: rgba(255, 255, 255, 0.7); border: none;">Iniciar Som</button>
 
-    <!-- Script para ativar o som com interação -->
-    <script>
-        const video = document.getElementById('video-background');
-        const startButton = document.getElementById('startButton');
+<script>
+    const video = document.getElementById('video-background');
+    const muteButton = document.getElementById('muteButton');
 
-        startButton.addEventListener('click', function() {
-            video.muted = false;  // Ativa o som do vídeo
-            video.play();  // Reproduz o vídeo caso tenha pausado
-            startButton.style.display = 'none';  // Esconde o botão após o clique
-        });
+    // Função para alternar o som
+    muteButton.addEventListener('click', function(event) {
+        event.stopPropagation(); // Impede que o clique no botão ative/desative o som pela janela
+        if (video.muted) {
+            video.muted = false;  // Ativa o som
+            muteButton.textContent = 'Desativar Som';  // Muda o texto do botão
+        } else {
+            video.muted = true;  // Desativa o som
+            muteButton.textContent = 'Iniciar Som';  // Muda o texto do botão
+        }
+    });
 
-        // Assegura que o vídeo seja reproduzido com som após o clique
-        window.addEventListener('click', function() {
-            video.muted = false;
-        });
-    </script>
+    // Ativa o som ao clicar em qualquer lugar da página
+    window.addEventListener('click', function() {
+        if (video.muted) {
+            video.muted = false;  // Ativa o som ao clicar em qualquer lugar da tela
+            muteButton.textContent = 'Desativar Som';  // Muda o texto do botão
+        }
+    });
+</script>
+
+
+
 
 
 <body>
-
-<!-- Adiciona o vídeo com loop e áudio -->
-<video class="video-background" src="video1Rodolfo.mp4" autoplay muted loop></video>
 
 <header>
     <h1>Formação Musical</h1>
@@ -224,6 +232,7 @@
     <a href="#" data-section="aulas">modalidades de aulas/preços</a>
     <a href="#" data-section="cursos">cursos: instrumentos e mais</a>
     <a href="#" data-section="composição">composição</a>
+    <a href="#" data-section="galeria">galeria</a>
     <a href="#" data-section="sobre">sobre</a>
     <a href="#" data-section="contato">contato</a>
 </nav>
@@ -321,6 +330,20 @@
         </div>
 </section>
 
+
+ <section id="galeria" class="content">
+        <h2>vídeos de alunos (em construção)</h2>        
+        <h3>Rodolfo</h3>
+        <h4>Tema da Pantera Cor de Rosa</h4>
+        <p class="justificado">compositor: Henry Mancini (1924-1994)</p>
+        <video controls>
+            <source src="rodolfo_pantera.mp4" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        </div>
+</section>
+
+
 <section id="sobre" class="content">
     <h2>sobre</h2>
     <p class="justificado">Site dedicado a promover a arte musical através de aulas de violino e viola de orquestra, teoria musical, composição e contraponto. Nosso objetivo é oferecer uma experiência enriquecedora para todos os amantes da música, seja através de aulas presenciais em Belo Horizonte ou online para alunos de todo o mundo.</p>
@@ -372,6 +395,7 @@
     <a href="#" data-section="aulas">modalidades de aulas/preços</a>
     <a href="#" data-section="cursos">cursos: instrumentos e mais</a>
     <a href="#" data-section="composição">composição</a>
+    <a href="#" data-section="galeria">galeria</a>
     <a href="#" data-section="sobre">sobre</a>
     <a href="#" data-section="contato">contato</a>
 </nav>
